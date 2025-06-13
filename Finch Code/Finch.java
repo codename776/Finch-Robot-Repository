@@ -1,27 +1,26 @@
-package Code;
-// Needs a package declaration to move to another folder
+import edu.cmu.ri.createlab.terk.robot.finch.Finch;
 
-import com.birdbraintechnologies.Finch;
+public class FinchMovement {
+    public static void main(String[] args) {
+        Finch myFinch = new Finch();
 
-/**
- * Created by:
- * Date:
- * A starter file to use the Finch
- */
+        // Move forward
+        myFinch.setWheelVelocities(100, 100, 2000); // Move forward for 2 seconds
 
-public class FinchTemplateFile
-   {
-   public static void main(final String[] args)
-      {
-      // Instantiating the Finch object
-      Finch myFinch = new Finch();
+        // Zig-zag movement
+        for (int i = 0; i < 3; i++) {
+            myFinch.setWheelVelocities(100, 50, 1000); // Turn right
+            myFinch.setWheelVelocities(50, 100, 1000); // Turn left
+        }
 
-      // Write some code here!
+        // Spin in place
+        myFinch.setWheelVelocities(100, -100, 2000); // Spin for 2 seconds
 
-      // Always end your program with finch.quit()
-      myFinch.quit();
-      System.exit(0);
-      }
-   }
+        // Stop Finch
+        myFinch.stop();
+        myFinch.quit();
+    }
+}
+
 
 
