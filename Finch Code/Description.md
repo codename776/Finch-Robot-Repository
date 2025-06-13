@@ -1,4 +1,4 @@
-# Describtion of the COde:
+# Describtion of the Code:
 The Java program controls the Finch Library using the <code>Finch<code> class from the CMU Finch Library.
 1. ***Move forward:*** The Finch moves straight ahead with equal wheel velocity(100,100 for 2 seconds).
 
